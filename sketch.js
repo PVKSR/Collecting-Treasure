@@ -5,7 +5,7 @@ var gamestate="PLAY"
 var path,boy,cash,diamonds,jwellery,sword,end;
 var pathImg,boyImg,cashImg,diamondsImg,jwelleryImg,swordImg,endImg;
 var score = 0;
-var cashG,diamondsG,jwelleryG,swordGroup,gameovers,picks,runs;
+var cashG,diamondsG,jwelleryG,swordGroup,picks,runs;
 
 function preload(){
   pathImg = loadImage("Road.png");
@@ -15,7 +15,7 @@ function preload(){
   jwelleryImg = loadImage("jwell.png");
   swordImg = loadImage("sword.png");
   endImg =loadAnimation("gameOver.png");
-  gameovers = loadSound("gameOver.mp3");
+  
   picks = loadSound("picku.mp3");
   runs = loadSound("run.mp3")
 }
@@ -94,7 +94,6 @@ path.velocityY = (4 + score/200);
       if(swordGroup.isTouching(boy)) {
     swordGroup.destroyEach();
        gamestate="END";    
-       gameovers.play();
       }
     }
     
